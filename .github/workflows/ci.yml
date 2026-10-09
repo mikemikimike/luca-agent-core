@@ -25,6 +25,9 @@ jobs:
       - name: Lint
         run: uvx ruff check .
 
+      - name: Tests
+        run: uv run --frozen python -m unittest discover -s tests -v
+
       - name: Import and tool-registry check
         run: |
           uv run python -c "
